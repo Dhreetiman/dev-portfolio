@@ -33,7 +33,7 @@ export const HeroContent = () => {
           className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 text-3xl sm:text-4xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               Trithanka
             </span>
