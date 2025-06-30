@@ -280,7 +280,8 @@ html {
 
 /* Cursor Trail Effect Styles */
 body {
-  cursor: none; /* Hide default cursor to emphasize the custom trail */
+  /* cursor: none; */
+  /* cursor: none;  Hide default cursor to emphasize the custom trail */
 }
 
 /* Show default cursor on interactive elements for better UX */
@@ -314,4 +315,12 @@ button, a, input, textarea, select, [role="button"], [tabindex] {
   100% {
     stroke-dasharray: 100 0;
   }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

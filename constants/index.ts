@@ -260,22 +260,19 @@ export const OTHER_SKILL = [
 export const PROJECTS = [
   {
     title: "Modern Next.js 14 Portfolio",
-    description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
+    description: "A modern, dynamic portfolio built with Next.js 14 to showcase web development skills.",
     image: "/projects/project-1.png",
     link: "https://example.com",
   },
   {
     title: "Interactive Cards Portfolio",
-    description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
+    description: "An interactive portfolio using cards to present skills and projects in a visually engaging way.",
     image: "/projects/project-2.png",
     link: "https://example.com",
   },
   {
     title: "Space Themed Website",
-    description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
+    description: "A visually stunning website with a space theme and immersive user experience.",
     image: "/projects/project-3.png",
     link: "https://example.com",
   },
@@ -285,27 +282,57 @@ export const PERSONAL_PROJECTS = [
   {
     title: "Government Job Portal",
     date: "Mar 2024 - Present",
-    description: "High-traffic job platform handling 10K+ concurrent users with OTP authentication, dynamic filtering, and role-based dashboards for employers and candidates.",
+    description: "A scalable job portal for government recruitment with OTP login and real-time dashboards.",
     technologies: ["Node.js", "Express", "MySQL", "OTP Auth", "Redis", "JWT"]
   },
   {
     title: "National Registration Portal",
     date: "Jan 2024 - Present",
-    description: "Unified backend for nationwide candidate registration with duplicate detection algorithms and UIDAI integration for identity verification.",
+    description: "Unified backend for nationwide candidate registration with identity verification.",
     technologies: ["Node.js", "MongoDB", "API Integration", "NLP", "Validation"]
   },
   {
     title: "HR Management System",
     date: "Apr 2024 - Present", 
-    description: "Enterprise HR platform with automated workflows, performance tracking, and multi-department scalability for government departments.",
+    description: "HR platform for automated workflows and performance tracking in government departments.",
     technologies: ["Node.js", "Express", "MongoDB", "Access Control", "Reporting"]
   },
   {
     title: "AI University Chatbot",
     date: "Mar 2023 - Jun 2023",
-    description: "Custom NLP-powered chatbot for university queries without external libraries, implementing natural language processing from scratch.",
+    description: "NLP-powered chatbot for university queries, built from scratch without external libraries.",
     technologies: ["Node.js", "NLP", "AI/ML", "Messaging API", "Text Analysis"]
-  }
+  },
+  {
+    title: "Convergence Dashboard for Government Department",
+    date: "2023 - Present",
+    description: "Dashboard for real-time monitoring and reporting of government KPIs.",
+    technologies: ["React", "Node.js", "Express", "MySQL", "Chart.js", "REST API"]
+  },
+  {
+    title: "Attendance & Leave Management App",
+    date: "2023 - Present",
+    description: "App for employee attendance, leave management, and notifications.",
+    technologies: ["React Native", "Node.js", "Express", "MongoDB", "Push Notifications"]
+  },
+  {
+    title: "Picbin Garbage Management System (Freelance)",
+    date: "2022 - 2023",
+    description: "Smart garbage collection system with real-time bin status and route optimization.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "IoT Integration"]
+  },
+  {
+    title: "Compare-Kro (Online Price Compare - Web Scraping)",
+    date: "2022 - 2023",
+    description: "Platform for comparing product prices across e-commerce sites using web scraping.",
+    technologies: ["Next.js", "Node.js", "Puppeteer", "MongoDB", "REST API"]
+  },
+  {
+    title: "MIS System for Government Body",
+    date: "2021 - 2022",
+    description: "MIS for government data-driven decision making and workflow automation.",
+    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Reporting"]
+  },
 ] as const;
 
 export const FOOTER_DATA = [
@@ -388,6 +415,10 @@ export const NAV_LINKS = [
     title: "Projects",
     link: "#personal-projects",
   },
+  {
+    title: "Contact Me",
+    link: "#contact",
+  },
 ] as const;
 
 export const LINKS = {
@@ -414,7 +445,7 @@ export const EXPERIENCE_DATA = [
     title: "Graduate Engineer Trainee",
     company: "_VOIS (Vodafone Intelligence Solution)",
     date: "Aug 2023 - Apr 2024",
-    location: "India",
+    location: "Pune, India",
     description: [
       "Integrated MongoDB with Node.js and Express to develop a scalable backend system capable of efficiently handling over 10,000 concurrent user requests.",
       "Enhanced database queries and schema designs to enhance performance and scalability, resulting in a 50% reduction in server load.",

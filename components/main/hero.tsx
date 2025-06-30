@@ -12,7 +12,10 @@ export const Hero = () => {
         <source src="/videos/blackhole.webm" type="video/webm" />
       </video>
 
-      <HeroContent />
+     <div className="mt-20 sm:mt-20 md:mt-0">
+  <HeroContent />
+</div>
+
     </div>
   );
 };

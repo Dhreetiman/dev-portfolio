@@ -4,14 +4,76 @@ import { motion } from "framer-motion";
 import { PersonalProjectCard } from "@/components/sub/personal-project-card";
 import { PERSONAL_PROJECTS } from "@/constants";
 import { FaRocket, FaUsers, FaCode, FaAward } from "react-icons/fa";
+import { useRef, useEffect, useState } from "react";
 
 export const PersonalProjects = () => {
   const stats = [
-    { icon: FaRocket, label: "Projects", value: PERSONAL_PROJECTS.length },
-    { icon: FaUsers, label: "Users Served", value: "10K+" },
-    { icon: FaCode, label: "Technologies", value: "15+" },
-    { icon: FaAward, label: "Experience", value: "2+ Years" }
+    { icon: FaRocket, label: "Projects", value: "30+" },
+    { icon: FaUsers, label: "Users Served", value: "100K+" },
+    { icon: FaCode, label: "Technologies", value: "18+" },
+    { icon: FaAward, label: "Experience", value: "3+ Years" }
   ];
+
+  // State to toggle between auto-scroll and manual scroll
+  const [manualScroll, setManualScroll] = useState(false);
+  const manualScrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const manualScrollContainer = useRef<HTMLDivElement>(null);
+
+  // Ref for the scrollable container
+  const scrollContainer = useRef<HTMLDivElement>(null);
+  const projectCount = PERSONAL_PROJECTS.length;
+
+  // Handler to switch to manual scroll on user interaction
+  const handleUserScroll = () => {
+    setManualScroll(true);
+    if (manualScrollTimeout.current) clearTimeout(manualScrollTimeout.current);
+    manualScrollTimeout.current = setTimeout(() => {
+      setManualScroll(false);
+      // Optionally scroll back to start
+      manualScrollContainer.current?.scrollTo({ left: 0, behavior: "smooth" });
+    }, 5000); // 5 seconds of inactivity
+  };
+
+  // Handle seamless infinite scroll for manual scroll
+  useEffect(() => {
+    const el = scrollContainer.current;
+    if (!el) return;
+    const item = el.querySelector('div.flex > div');
+    if (!item) return;
+    const itemWidth = (item as HTMLElement).offsetWidth;
+    const totalWidth = itemWidth * projectCount;
+
+    const handleScroll = () => {
+      if (el.scrollLeft <= 0) {
+        // Jump to the start of the second set
+        el.scrollLeft = totalWidth;
+      } else if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+        // Jump back to the start of the first set
+        el.scrollLeft = el.scrollLeft - totalWidth;
+      }
+    };
+    el.addEventListener('scroll', handleScroll);
+    // Initialize scroll position to the start of the first set
+    el.scrollLeft = totalWidth;
+    return () => {
+      el.removeEventListener('scroll', handleScroll);
+    };
+  }, [projectCount]);
+
+  useEffect(() => {
+    if (!manualScrollContainer.current) return;
+    const el = manualScrollContainer.current;
+    el.addEventListener("wheel", handleUserScroll);
+    el.addEventListener("touchstart", handleUserScroll);
+    el.addEventListener("mousedown", handleUserScroll);
+    el.addEventListener("scroll", handleUserScroll);
+    return () => {
+      el.removeEventListener("wheel", handleUserScroll);
+      el.removeEventListener("touchstart", handleUserScroll);
+      el.removeEventListener("mousedown", handleUserScroll);
+      el.removeEventListener("scroll", handleUserScroll);
+    };
+  }, []);
 
   return (
     <section
@@ -84,15 +146,18 @@ export const PersonalProjects = () => {
       
       {/* Projects Grid */}
       <div className="w-full px-4 md:px-10 overflow-hidden relative z-10">
-        {/* Auto-scrolling container */}
-        <div className="w-full overflow-hidden">
+        <div
+          className="w-full overflow-x-auto scrollbar-hidden"
+          ref={scrollContainer}
+          tabIndex={0}
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
           <motion.div 
             className="flex space-x-4 md:space-x-6 auto-scroll"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Duplicate projects for seamless loop */}
             {[...PERSONAL_PROJECTS, ...PERSONAL_PROJECTS].map((project, index) => (
               <motion.div 
                 key={`${project.title}-${index}`} 
@@ -128,7 +193,7 @@ export const PersonalProjects = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <motion.a
-            href="#about-me"
+            href="#contact"
             className="px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-full font-medium hover:scale-105 transition-all duration-300 hover-lift"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

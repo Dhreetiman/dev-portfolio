@@ -15,7 +15,7 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-20 mt-20 md:mt-40 w-full z-[20]"
+      className="flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-20 mt-8 md:mt-16 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-4 md:gap-5 justify-center m-auto text-start">
         <motion.div
@@ -24,7 +24,7 @@ export const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[8px] md:mr-[10px] h-4 w-4 md:h-5 md:w-5" />
           <h1 className="Welcome-text text-[13px] md:text-[15px] font-semibold">
-            Backend Developer Portfolio
+            Software Developer Portfolio
           </h1>
         </motion.div>
 
@@ -44,7 +44,7 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-base md:text-lg text-gray-400 my-3 md:my-5 max-w-[600px] leading-relaxed"
         >
-          Experienced Backend developer with a flair for innovation and a dedication to creating seamless user experiences. I thrive on turning ideas into impactful digital experiences that resonate with users.
+          Experienced Software developer with a flair for innovation and a dedication to creating seamless user experiences. I thrive on turning ideas into impactful digital experiences that resonate with users.
         </motion.p>
 
         <motion.div 

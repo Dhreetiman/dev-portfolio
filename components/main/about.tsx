@@ -8,17 +8,18 @@ import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
 
 export const About = () => {
   const expertise = [
-    { icon: FaServer, title: "Backend Development", desc: "Node.js & Express" },
-    { icon: FaDatabase, title: "Database Design", desc: "MySQL & MongoDB" },
-    { icon: FaShieldAlt, title: "Security", desc: "Government Solutions" },
-    { icon: FaCogs, title: "Performance", desc: "High Concurrency" },
+    { icon: FaServer, title: "Web Development", desc: "Modern, Scalable Applications" },
+    { icon: FaDatabase, title: "Database Design", desc: "MySQL & MongoDB Expertise" },
+    { icon: FaShieldAlt, title: "Security", desc: "Auth, Access Control, and Best Practices" },
+    { icon: FaCogs, title: "Software Development", desc: "Optimized for Performance & Scale" },
   ];
+  
 
   const quickStats = [
-    { label: "Projects", value: "10+" },
-    { label: "Experience", value: "2+ Years" },
-    { label: "Technologies", value: "15+" },
-    { label: "Users Served", value: "10K+" },
+    { label: "Projects", value: "30+" },
+    { label: "Experience", value: "3+ Years" },
+    { label: "Technologies", value: "18+" },
+    { label: "Users Served", value: "100K+" },
   ];
 
   return (
@@ -170,12 +171,12 @@ export const About = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-gradient-to-r from-purple-500/10 to-transparent p-4 rounded-xl border border-purple-500/30">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">10K+</div>
+                    <div className="text-2xl font-bold text-purple-400 mb-1">109K+</div>
                     <div className="text-gray-300 text-sm">Concurrent Users Handled</div>
                   </div>
                   <div className="bg-gradient-to-r from-cyan-500/10 to-transparent p-4 rounded-xl border border-cyan-500/30">
-                    <div className="text-2xl font-bold text-cyan-400 mb-1">Government</div>
-                    <div className="text-gray-300 text-sm">Secure Solutions</div>
+                    <div className="text-2xl font-bold text-cyan-400 mb-1">GovTech</div>
+                    <div className="text-gray-300 text-sm">Secure Public Infrastructure</div>
                   </div>
                   <div className="bg-gradient-to-r from-purple-500/10 to-transparent p-4 rounded-xl border border-purple-500/30">
                     <div className="text-2xl font-bold text-purple-400 mb-1">Scalable</div>
