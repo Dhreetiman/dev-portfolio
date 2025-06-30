@@ -4,10 +4,10 @@ import { Points, PointMaterial } from "@react-three/drei";
 import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useState, useRef, Suspense, useMemo } from "react";
-import type { Points as PointsType } from "three";
+import { Points as ThreePoints } from "three";
 
 export const StarBackground = (props: PointsProps) => {
-  const ref = useRef<PointsType | null>(null);
+  const ref = useRef<ThreePoints>(null);
   
   // Optimized: Reduced particle count and memoized positions
   const [sphere] = useState(() =>
@@ -37,7 +37,6 @@ export const StarBackground = (props: PointsProps) => {
         ref={ref}
         stride={3}
         positions={new Float32Array(sphere)}
-        frustumCulled
         {...props}
       >
         <PointMaterial
@@ -51,7 +50,6 @@ export const StarBackground = (props: PointsProps) => {
       <Points
         stride={3}
         positions={additionalStars1}
-        frustumCulled
         {...props}
       >
         <PointMaterial
@@ -65,7 +63,6 @@ export const StarBackground = (props: PointsProps) => {
       <Points
         stride={3}
         positions={additionalStars2}
-        frustumCulled
         {...props}
       >
         <PointMaterial
