@@ -277,3 +277,41 @@ html {
 .animate-border-glow {
   animation: border-glow 2s ease-in-out infinite;
 }
+
+/* Cursor Trail Effect Styles */
+body {
+  cursor: none; /* Hide default cursor to emphasize the custom trail */
+}
+
+/* Show default cursor on interactive elements for better UX */
+button, a, input, textarea, select, [role="button"], [tabindex] {
+  cursor: pointer !important;
+}
+
+/* Enhanced cursor trail performance */
+.cursor-trail-element {
+  will-change: transform, opacity;
+  transform-origin: center;
+}
+
+/* Smooth cursor trail animations */
+@keyframes trail-fade {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+/* Ribbon flow animation */
+@keyframes ribbon-flow {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+  }
+}
